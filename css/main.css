@@ -27,5 +27,10 @@ body {
 }
 
 #map {
-    position: absolute; top: 0; right: 0; bottom: 0; left: 0; height: 500px;
+  position: relative;
+  height: 400px;  /* or as desired */
+  width: 100%;  /* This means "100% of the width of its container", the .col-md-8 */
 }
+
+
+
