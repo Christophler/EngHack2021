@@ -1,4 +1,5 @@
-var map = L.map('map').setView([43.4643, -80.5204], 11);
+
+var map = L.map('map').setView([49.2827, -123.1207], 10);
 L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=uSb3pbKtGymmXLDpb0XX',{
 tileSize: 512,
 zoomOffset: -1,
@@ -9,6 +10,15 @@ crossOrigin: true
 
 var coordinates = 0;
 
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      console.log(position.coords.latitude);
+      map.setView([position.coords.latitude, position.coords.longitude], 10);
+    })
+  }
+}
+
 function onMapClick(e) {
   //console.log("You clicked the map at " + e.latlng);
   coordinates = e.latlng;
@@ -16,4 +26,5 @@ function onMapClick(e) {
   document.getElementById("Longitude").innerHTML = coordinates.lng;
 }
 
+getLocation()
 map.on('click', onMapClick);
