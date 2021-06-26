@@ -6,7 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>Bootstrap 101 Template</title>
-
+    <!--Main CSS-->
+    <link rel="stylesheet" href="../css/main.css">
+    <!--Leaflet CSS and JS-->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <!-- Bootstrap -->
     <link
       rel="stylesheet"
@@ -33,12 +37,17 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+    <div id="map">
+      <a href="https://www.maptiler.com" style="position:absolute;left:10px;bottom:10px;z-index:999;"><img src="https://api.maptiler.com/resources/logo.svg" alt="MapTiler logo"></a>
+    </div>
+    <p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></p>
     <div class="container">
       <div class="jumbotron">
         <h1 class="display-4">Weather App</h1>
         <p class="lead">Weather app.</p>
       </div>
     </div>
+
 
     <div class="container">
       <div class="card">
@@ -81,5 +90,6 @@
           </div>
         </div>
     </div>
+    <script src="index.js"></script>
   </body>
 </html>
