@@ -12,7 +12,8 @@ var coordinates = 0;
 function onMapClick(e) {
   //console.log("You clicked the map at " + e.latlng);
   coordinates = e.latlng;
-  console.log(coordinates);
+  document.getElementById("Latitude").innerHTML = coordinates.lat;
+  document.getElementById("Longitude").innerHTML = coordinates.lng;
 }
 
 map.on('click', onMapClick);
