@@ -24,6 +24,11 @@ function onMapClick(e) {
   coordinates = e.latlng;
   document.getElementById("Latitude").innerHTML = coordinates.lat;
   document.getElementById("Longitude").innerHTML = coordinates.lng;
+
+  popup = L.popup()
+        .setLatLng([coordinates.lat, coordinates.lng])
+        .setContent("You clicked here!")
+        .openOn(map);
 }
 
 getLocation()
