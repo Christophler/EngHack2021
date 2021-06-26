@@ -9,7 +9,7 @@ body {
 }
 
 .nav-link, .navbar-brand {
-    color: #8d3f3f;
+    color: #229735;
     cursor: pointer;
 }
 
@@ -23,4 +23,8 @@ body {
 
 .navbar-collapse {
     justify-content: flex-end;
+}
+
+#worldmap {
+    height: 500px;
 }
