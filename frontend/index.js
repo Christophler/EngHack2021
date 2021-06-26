@@ -1,4 +1,4 @@
-var map = L.map('map').setView([0, 0], 1);
+var map = L.map('map').setView([43.4643, -80.5204], 11);
 L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=uSb3pbKtGymmXLDpb0XX',{
 tileSize: 512,
 zoomOffset: -1,
