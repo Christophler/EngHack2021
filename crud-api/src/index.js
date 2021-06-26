@@ -3,6 +3,9 @@ import cors from 'cors';
 import express from 'express';
 import https from 'https';
 
+// import route(s)
+import IndexRoute from "../Routes/IndexRoute"
+
 const app = express();
 
 let lat = '33.44';
@@ -24,6 +27,7 @@ https.get('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon='
 })
 
 app.use(cors());
+app.use('/', IndexRoute);
 
 app.listen(3000, () =>
     console.log('Listening on port 3000'),
