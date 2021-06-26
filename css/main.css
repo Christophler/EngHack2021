@@ -1,7 +1,7 @@
 body {
     padding: 0;
     margin: 0;
-    background: #dce6f0;
+    background: #e7ecf0;
 }
 
 .navbar {
@@ -9,12 +9,13 @@ body {
 }
 
 .nav-link, .navbar-brand {
-    color: #229735;
+    color: #ffffff;
     cursor: pointer;
 }
 
 .nav-link {
     margin-right: 1em !important;
+    color: #ffffff;
 }
 
 .nav-link:hover {
