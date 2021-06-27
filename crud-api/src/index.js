@@ -2,32 +2,37 @@ import 'dotenv/config';
 import cors from 'cors';
 import express from 'express';
 import https from 'https';
-
-// import route(s)
-import IndexRoute from "../Routes/IndexRoute"
+import bodyParser from 'body-parser';
 
 const app = express();
 
-let lat = '33.44';
-let lon = '94.04';
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-https.get('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&exclude=hourly,daily&appid=128eacb0a4bcd1d2a7e3ba93dcbf716f', (res) => {
-    let data = '';
-    res.on('data', (chunk) => {
-        data += chunk;
-    });
+let lat = '';
+let lng = '';
 
-    res.on('end', () => {
-        //console.log(data);
-    });
+app.post('/coordinates', (req, res) => {
+    lat = req.body.lat;
+    lng = req.body.lng;
 
-    app.get('/', (req, res) => {
-        res.send(data);
-    });
+    https.get('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lng + '&exclude=hourly,daily&appid=128eacb0a4bcd1d2a7e3ba93dcbf716f', (res) => {
+        let data = '';
+        res.on('data', (chunk) => {
+            data += chunk;
+        });
+    
+        res.on('end', () => {
+            //console.log(data);
+        });
+    
+        app.get('/', (req, res) => {
+            res.send(data);
+        });
+    })
 })
 
-app.use(cors());
-app.use('/', IndexRoute);
 
 app.listen(3000, () =>
     console.log('Listening on port 3000'),

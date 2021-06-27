@@ -20,8 +20,14 @@ function getLocation() {
 }
 
 function onMapClick(e) {
-  //console.log("You clicked the map at " + e.latlng);
   coordinates = e.latlng;
+  location_package = {
+    "lat": String(coordinates.lat),
+    "lng": String(coordinates.lng),
+  }
+  
+  fetch('http://localhost:3000/coordinates', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(location_package) });
+  
   document.getElementById("Latitude").innerHTML = coordinates.lat;
   document.getElementById("Longitude").innerHTML = coordinates.lng;
 
