@@ -26,8 +26,10 @@ function onMapClick(e) {
     "lng": String(coordinates.lng),
   }
   
-  fetch('http://localhost:3000/coordinates', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(location_package) });
-  
+  fetch('http://localhost:3000/coordinates', { method: 'POST', headers: {'Content-Type': 'application/json'}, body: JSON.stringify(location_package) })
+    .then(res => res.text())
+    .then(data => console.log(data));
+
   document.getElementById("Latitude").innerHTML = coordinates.lat;
   document.getElementById("Longitude").innerHTML = coordinates.lng;
 
