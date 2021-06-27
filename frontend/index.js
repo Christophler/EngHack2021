@@ -37,7 +37,13 @@ function onMapClick(e) {
   
   function get_data(json) {
     console.log(json);
-    //Enter DOM here
+
+    document.getElementById('Timezone').innerHTML = "Timezone: " + json.timezone;
+    document.getElementById("Temperature").innerHTML = "Humidity: " + json.curret.temp;
+    document.getElementById("Humidity").innerHTML = "Weather Conditions: " + json.current.humidity;
+    document.getElementById("Wind Speed").innerHTML = "Windspeed: " + json.current.wind_speed;
+    document.getElementById("Wind Direction").innerHTML = "Wind Direction: " + json.current.wind_deg;
+    
   }
 
   get_api(get_data);
