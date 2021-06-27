@@ -53,7 +53,7 @@ function onMapClick(e) {
     document.getElementById("Wind Direction").innerHTML = "Wind Direction (°): " + json.current.wind_deg;
     document.getElementById('Visibility').innerHTML = "Visibility (m): " + json.current.visibility;
     document.getElementById('Cloudiness').innerHTML = "Cloudiness (%): " + json.current.clouds;
-    document.getElementById('UVI').innerHTML = "UVI Index: " + json.current.uvi;
+    document.getElementById('UVI').innerHTML = "UV Index: " + json.current.uvi;
   }
 
   get_api(get_data);
