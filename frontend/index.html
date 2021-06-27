@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>WWW - Global Weather Data</title>
     <!--Main CSS-->
     <link rel="stylesheet" href="../css/main.css">
     <!--Leaflet CSS and JS-->
@@ -39,7 +39,7 @@
     ></script>
 
     <nav class = "navbar navbar-expand-md">
-        <a class="navbar-brand" href="#">Weather App</a>
+        <a class="navbar-brand" href="#">World Weather Web</a>
         <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -57,8 +57,8 @@
 
     <div class="container">
       <div class="jumbotron">
-        <h1 class="display-4">Weather App</h1>
-        <p class="lead">Click anywhere on the map to display the weather of that location!</p>
+        <h1 class="display-4">World Weather Web</h1>
+        <p class="lead">Click anywhere on the map to display the weather data for that location.</p>
       </div>
     </div>
     
@@ -69,51 +69,48 @@
       <p><a href="https://www.maptiler.com/copyright/" target="_blank">© MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">© OpenStreetMap contributors</a></p>
     </div>
 
-    <div class="container">
-      <div class="card">
-        <div class="card-body">
-          <h5 id = "Timezone" class="card-title">Timezone</h5>
-          <h6 class="card-subtitle mb-2 text-muted">Data For July 27, 2021</h6>
-          <h6 id = "Temperature" class = "card-title">Temperature</h6>
-          <h6 id = "Humidity" class = "card-title">Humidity</h6>
-          <h6 id = "Weather Conditions" class="card-title">Weather Conditions</h6>
-          <h6 id = "Windspeed" class = "card-title">Windspeed</h6>
-          <h6 id = "Wind Direction" class = "card-title">Wind Direction</h6>
+    <div class="container d-flex justify-content-center">
+      <div class="col-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Longitude</h5>
+            <p id = "Longitude" class="card-text">-</p>
+          </div>
+        </div>
+      </div>
+      <div class='col-3'>
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Latitude</h5>
+            <p id = "Latitude" class="card-text">-</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-flex justify-content-center">
+      <div class='col-6'>
+        <div class="card">
+          <div class="card-body">
+            <h5 id = "Timezone" class="card-title">Timezone: -</h5>
+            <h6 id = "Time" class="card-subtitle mb-2 text-muted">Weather Data on Date: </h6>
+            <h6 id = "Temperature" class = "card-title">Temperature (C): -</h6>
+            <h6 id = "Humidity" class = "card-title">Humidity (%): -</h6>
+            <h6 id = "Pressure" class = "card-title">Sea Level Pressure (hPa): -</h6>
+            <h6 id = "Dew Point" class = "card-title">Dew Point (C): -</h6>
+            <h6 id = "Weather Condition" class="card-title">Weather Conditions: -</h6>
+            <h6 id = "Wind Speed" class = "card-title">Windspeed: -</h6>
+            <h6 id = "Wind Direction" class = "card-title">Wind Direction: -</h6>
+            <h6 id = "Visibility" class = "card-title">Visibility (m): -</h6>
+            <h6 id = "Cloudiness" class = "card-title">Cloudiness (%): -</h6>
+            <h6 id = "UVI" class = "card-title">UVI Index: -</h6>
+          </div>
         </div>
       </div>
     </div>
     
-    <br>
-    <div class="container">
-      <div class="card-columns">
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Longitude</h5>
-            <p id = "Longitude" class="card-text">
-              -
-            </p>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Card 2</h5>
-            <p class="card-text">
-              Card 2
-            </p>
-          </div>
-        </div>
 
 
-        <div class="card">
-          <div class="card-body">
-            <h5 class="card-title">Latitude</h5>
-            <p id = "Latitude" class="card-text">
-              -
-            </p>
-          </div>
-        </div>
-    </div>
     <script src="index.js"></script>
   </body>
 </html>
