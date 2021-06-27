@@ -13,7 +13,7 @@ app.post('/coordinates', (req, res) => {
     let lat = req.body.lat;
     let lng = req.body.lng;
     
-    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lng + '&exclude=hourly,daily&appid=128eacb0a4bcd1d2a7e3ba93dcbf716f')
+    fetch('https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lng + '&exclude=hourly,daily,minutely&units=metric&appid=128eacb0a4bcd1d2a7e3ba93dcbf716f')
         .then(res => res.json())
         .then(data => res.send(data));
 });

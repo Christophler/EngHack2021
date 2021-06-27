@@ -9,6 +9,14 @@ var map = L.map('map').setView([49.2827, -123.1207], 10);
 
 var coordinates = 0;
 
+var currentdate = new Date(); 
+var datetime = currentdate.getDate() + "/"
+                + (currentdate.getMonth()+1)  + "/" 
+                + currentdate.getFullYear() + " @ "  
+                + currentdate.getHours() + ":"  
+                + currentdate.getMinutes() + ":" 
+                + currentdate.getSeconds();
+
 function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
@@ -17,8 +25,6 @@ function getLocation() {
     })
   }
 }
-
-
 
 function onMapClick(e) {
   coordinates = e.latlng;
@@ -36,14 +42,18 @@ function onMapClick(e) {
   }
   
   function get_data(json) {
-    console.log(json);
-
     document.getElementById('Timezone').innerHTML = "Timezone: " + json.timezone;
-    document.getElementById("Temperature").innerHTML = "Humidity: " + json.curret.temp;
-    document.getElementById("Humidity").innerHTML = "Weather Conditions: " + json.current.humidity;
-    document.getElementById("Wind Speed").innerHTML = "Windspeed: " + json.current.wind_speed;
-    document.getElementById("Wind Direction").innerHTML = "Wind Direction: " + json.current.wind_deg;
-    
+    document.getElementById('Time').innerHTML = "Weather Data on Date: " + datetime + " (EST)";
+    document.getElementById("Temperature").innerHTML = "Temperature (°C): " + json.current.temp;
+    document.getElementById("Humidity").innerHTML = "Humidity (%): " + json.current.humidity;
+    document.getElementById("Pressure").innerHTML = "Sea Level Pressure (hPa): " + json.current.pressure;
+    document.getElementById("Dew Point").innerHTML = "Dew Point (°C): " + json.current.dew_point;
+    document.getElementById("Weather Condition").innerHTML = "Weather Condition: " + json.current.weather[0].main;
+    document.getElementById("Wind Speed").innerHTML = "Windspeed (m/s): " + json.current.wind_speed;
+    document.getElementById("Wind Direction").innerHTML = "Wind Direction (°): " + json.current.wind_deg;
+    document.getElementById('Visibility').innerHTML = "Visibility (m): " + json.current.visibility;
+    document.getElementById('Cloudiness').innerHTML = "Cloudiness (%): " + json.current.clouds;
+    document.getElementById('UVI').innerHTML = "UVI Index: " + json.current.uvi;
   }
 
   get_api(get_data);
@@ -53,7 +63,7 @@ function onMapClick(e) {
 
   popup = L.popup()
         .setLatLng([coordinates.lat, coordinates.lng])
-        .setContent("You clicked here!")
+        .setContent("Here!")
         .openOn(map);
 }
 

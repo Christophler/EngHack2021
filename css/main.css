@@ -4,6 +4,16 @@ body {
     background: #e7ecf0;
 }
 
+#map {
+    position: relative;
+    height: 400px;  /* or as desired */
+    width: 100%;  /* This means "100% of the width of its container", the .col-md-8 */
+  }
+
+.container {
+    margin: 20px;
+}
+
 .navbar {
     background:#4f8cdb;
 }
@@ -30,12 +40,5 @@ body {
 .navbar-collapse {
     justify-content: flex-end;
 }
-
-#map {
-  position: relative;
-  height: 400px;  /* or as desired */
-  width: 100%;  /* This means "100% of the width of its container", the .col-md-8 */
-}
-
 
 
