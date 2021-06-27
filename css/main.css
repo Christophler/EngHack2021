@@ -13,6 +13,11 @@ body {
     cursor: pointer;
 }
 
+.navbar-inner{
+    padding-left:40;
+    padding-right:30;
+}
+
 .nav-link {
     margin-right: 1em !important;
     color: #ffffff;
