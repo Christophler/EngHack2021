@@ -5,7 +5,7 @@ An interactive web-app inspired by the lack of easy to find weather-related data
 The project utilizes a Node.js and express back-end, linked to a Javascript, css and html, combined with boostrap.css and leaflet.js libraries for the front-end. In order to obtain the weather data, we used the OpenWeatherMap API.
 
 # How to run it
-In order to ensure that the API call requests are made correctly, install all of the NPM packages listed below then go into the crud-api directory, before typing `npm start` into the console. You should then be able to run the web-app perfectly fine and start exploring the app!
+In order to ensure that the API call requests are made correctly, install all of the NPM packages listed below then go into the crud-api directory, before typing `npm start` in `crud-api/` as well as `frontend/`. You should then be able to run the web-app perfectly fine and start exploring the app on port 8080.
 
 ## NPM Installs:
 ```
