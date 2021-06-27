@@ -19,6 +19,9 @@ npm install dotenv
 npm install express
 npm install node-fetch
 ```
+# Docker image
+Another option is to simply use docker.
+```docker build . -t world-weather-web/world-weather-web``
 
 # Devpost Link
 https://devpost.com/software/weathertogether
